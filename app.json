@@ -1,0 +1,38 @@
+{
+  "requiredBackgroundModes": [
+    "audio",
+    "location"
+  ],
+  "pages": [
+    "pages/index/index",
+    "pages/mv/mv",
+    "pages/songList/songList",
+    "pages/paly/paly",
+    "pages/search/search"
+  ],
+  "tabBar": {
+    "selectedColor": "#d44439",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "推荐",
+        "iconPath": "/static/img/music.png",
+        "selectedIconPath": "/static/img/_music.png"
+      },
+      {
+        "pagePath": "pages/mv/mv",
+        "text": "mv",
+        "iconPath": "/static/img/MV.png",
+        "selectedIconPath": "/static/img/_MV.png"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "vx-music",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

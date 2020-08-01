@@ -1,0 +1,18 @@
+{
+    "vetur.format.options.tabSize": 4,
+    "minapp-vscode.decorateType": {
+    
+        "color": "#ba68c8"
+    },
+    "minapp-vscode.prettyHtml": {
+    "vetur.format.options.tabSize":4,
+        "useTabs": false,
+        "tabWidth": 4,
+        "printWidth": 100,
+        "singleQuote": false,
+        "usePrettier": true,
+        "wrapAttributes": false,
+        "sortAttributes": false
+    },
+    "editor.detectIndentation": false
+}
