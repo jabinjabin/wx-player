@@ -5,10 +5,12 @@
   ],
   "pages": [
     "pages/index/index",
-    "pages/mv/mv",
     "pages/songList/songList",
     "pages/paly/paly",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/album/album",
+    "pages/mv/recommend/recommend",
+    "pages/mv/detail/detail"
   ],
   "tabBar": {
     "selectedColor": "#d44439",
@@ -20,7 +22,7 @@
         "selectedIconPath": "/static/img/_music.png"
       },
       {
-        "pagePath": "pages/mv/mv",
+        "pagePath": "pages/mv/recommend/recommend",
         "text": "mv",
         "iconPath": "/static/img/MV.png",
         "selectedIconPath": "/static/img/_MV.png"

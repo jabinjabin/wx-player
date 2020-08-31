@@ -70,6 +70,19 @@ export const store = observable({
     emptySongList: action(function () {
         this.songList = []
     }),
+    // 将歌曲添加到播放列表
+    addSong: action(function (song) {
+        if (this.currentSong.url !== song.url) {
+            var newList = [...this.songList];
+            if (this.currentIndex != -1) {
+                newList.splice(this.currentIndex + 1, 0, song);
+            } else {
+                newList.push(song)
+            }
+            this.set_songList(newList)
+            this.set_currentSong(song)
+        }
+    }),
     // 切换播放模式
     select_palyMode: action(function () {
         var next;
@@ -97,7 +110,7 @@ const observers_currentSong = reaction(
                 audio.src = currentSong.url;
                 audio.title = currentSong.name
             }
-        }else{
+        } else {
             audio.stop()
         }
     }
@@ -106,8 +119,8 @@ const observers_currentSong = reaction(
 const observers_songList = reaction(
     () => store.songList,
     songList => {
-        if(songList.length === 0){
+        if (songList.length === 0) {
             store.set_currentSong({})
-        } 
+        }
     }
 );

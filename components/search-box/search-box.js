@@ -16,14 +16,10 @@ Component({
     data: {
         display: false,
         value: '',
-        isFocus:false
+        isFocus:true
     },
     lifetimes:{
-        ready(){
-            this.setData({
-                isFocus:true
-            })
-        }
+
     },
     /**
      * 组件的方法列表
@@ -33,6 +29,28 @@ Component({
             this.setData({
                 value:event.detail.value
             })
+            this.triggerEvent('input', this.data.value)
+        },
+        focus(){
+            this.triggerEvent("focus", this.data.value);
+        },
+        // 确认搜索
+        enter(){
+            this.triggerEvent("enter", this.data.value);
+            this.setData({
+                isFocus:false
+            })
+        },
+        // 设置value
+        setValue(query) {
+            this.setData({
+                value:query
+            })
+        },
+        // 搜索关键词
+        search(keyword){
+            this.setValue(keyword);
+            this.enter()
         },
         // 清除
         clear(){

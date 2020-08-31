@@ -1,12 +1,11 @@
 <view class="music-list">
-    <view class="list" ref="scroll">
+    <view class="list">
         <view class="music-list-wrapper">
             <view>
-                <view class="bg-image" style="background-image: url({{backgroundCoverUrl}});">
+                <view class="bg-image" style="background-image:url({{coverImgUrl}})">
                     <view class="filter"></view>
                     <view class="text">
                         <view class="list-title">{{name}}</view>
-                        <view class="update">最近更新:{{updateTime}}</view>
                     </view>
                 </view>
                 <view class="song-list-wrapper">
@@ -29,4 +28,3 @@
         </view>
     </view>
 </view>
-<play-tabbar></play-tabbar>

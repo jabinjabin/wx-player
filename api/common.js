@@ -8,7 +8,7 @@ export function formatDate(time, format = "YY-MM-DD hh:mm:ss") {
         hour = date.getHours(),
         min = date.getMinutes(),
         sec = date.getSeconds();
-    var preArr = Array.apply(null, Array(10)).map(function(
+    var preArr = Array.apply(null, Array(10)).map(function (
         elem,
         index
     ) {
@@ -28,4 +28,15 @@ export function formatDate(time, format = "YY-MM-DD hh:mm:ss") {
 // 任意范围的随机整数生成函数
 export const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// 转换时间格式
+export function get_M_S(e) {
+    var m;
+    var s;
+    m = Math.floor(e / 60);
+    s = Math.floor(e % 60);
+    if (s < 10) {
+        s = "0" + s;
+    }
+    return m + ":" + s;
 }
