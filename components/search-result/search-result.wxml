@@ -19,7 +19,7 @@
                     </view>
                 </navigator>
                 <!-- mv -->
-                <view class="matchitem mv" wx:for="{{multimatch.mv}}" wx:key="id">
+                <navigator url="/pages/mv/detail/detail?id={{item.id}}" class="matchitem mv" wx:for="{{multimatch.mv}}" wx:key="id" bindtap="go_mv">
                     <view class="linkcover f-bd f-bd-btm">
                         <view class="piccover">
                             <image class="pic" src="{{item.cover}}" mode="widthFix" />
@@ -37,7 +37,7 @@
                         </view>
                         <i class="u-svg u-svg-arr"></i>
                     </view>
-                </view>
+                </navigator>
             </view>
         </view>
         <!-- 歌曲列表 -->

@@ -19,7 +19,9 @@ Component({
         keyword: "",
         // 搜索结果
         multimatch: {},
-        songList: []
+        songList: [],
+        // 搜索结果总数量
+        songCount:0
     },
     // 计算属性
     computed: {
@@ -77,10 +79,14 @@ Component({
                 });
                 // 获取搜索结果
                 get_search_result(query).then(res => {
-                    res = res.data.result.songs;
-                    this.setData({
-                        songList: res
-                    })
+                    let data = res.data;
+                    if (data.code === 200) {
+                        this.setData({
+                            songList: data.result.songs,
+                            songCount: data.result.songCount
+                        })
+                    }
+
                 });
                 // 将搜索结果添加到localstorage中
                 add_search_history(query);
@@ -101,9 +107,9 @@ Component({
             })
         },
         // 搜索
-        search(data){
-           let search_box =  this.selectComponent('#search-box')
-           search_box.search(data.detail)
+        search(data) {
+            let search_box = this.selectComponent('#search-box')
+            search_box.search(data.detail)
         }
     }
 })

@@ -28,6 +28,7 @@ export const get_search_result = (keyWord,offset) => {
     if(!offset){
         var offset = 0
     }
+    
     return requst({
         url: `search?keywords=${keyWord}&offset=${offset}`
     })
